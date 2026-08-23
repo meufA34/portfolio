@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full-Stack Web Developer, problem solver, math enthusiast and speedcuber." />
+  <title>Alex Rivera — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+  <!-- Falling physics background canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-mark">&lt;/&gt;</span>
+        <span class="nav__logo-text">Alex Rivera</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#timeline" class="nav__link">Experience</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#contact" class="btn btn--ghost btn--sm">Let's talk</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">
+          <span class="hero__status-dot"></span>
+          Available for freelance &amp; full-time work
+        </p>
+        <h1 class="hero__title">
+          Full-Stack Developer<br />
+          <span class="hero__title-accent">&amp; Problem Solver</span>
+        </h1>
+        <p class="hero__bio">
+          I build fast, elegant web applications end to end — from pixel-perfect
+          interfaces to resilient back-end systems. Fueled by computer science,
+          a love of mathematics, and the pattern-solving instincts of a speedcuber.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        </div>
+
+        <dl class="hero__stats">
+          <div class="hero__stat">
+            <dt>5+</dt>
+            <dd>Years building</dd>
+          </div>
+          <div class="hero__stat">
+            <dt>40+</dt>
+            <dd>Projects shipped</dd>
+          </div>
+          <div class="hero__stat">
+            <dt>8.9s</dt>
+            <dd>3x3 average</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__index">01</span>
+          <h2 class="section__title">About Me</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__text">
+            <p>
+              I'm a full-stack web developer who treats every project like a puzzle
+              worth solving cleanly. Comfortable across the entire stack, I move
+              between crafting intuitive front-end experiences and architecting the
+              APIs, data models, and infrastructure behind them.
+            </p>
+            <p>
+              My background in computer science and genuine enthusiasm for mathematics
+              shape how I think — I break complex problems into first principles,
+              optimize for clarity, and sweat the details. Away from the keyboard,
+              you'll find me chasing faster Rubik's Cube solve times, a hobby that keeps
+              my pattern recognition and problem-solving sharp.
+            </p>
+            <ul class="about__facts">
+              <li><span class="about__fact-key">Focus</span> Modern web apps, DX, performance</li>
+              <li><span class="about__fact-key">Strengths</span> Analytical thinking, clean architecture</li>
+              <li><span class="about__fact-key">Loves</span> Math, algorithms, speedcubing</li>
+              <li><span class="about__fact-key">Based in</span> Remote-friendly, worldwide</li>
+            </ul>
+          </div>
+          <aside class="about__card">
+            <div class="about__card-glow" aria-hidden="true"></div>
+            <p class="about__card-label">Currently</p>
+            <p class="about__card-line">Building thoughtful web products &amp; open-source tools.</p>
+            <p class="about__card-label">Approach</p>
+            <p class="about__card-line">Ship small, measure, refine. Readable code over clever code.</p>
+            <p class="about__card-label">Mindset</p>
+            <p class="about__card-line">Every bug is a pattern waiting to be solved.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__index">02</span>
+          <h2 class="section__title">Tech Stack &amp; Skills</h2>
+        </div>
+
+        <div class="skills">
+          <article class="skill-group">
+            <h3 class="skill-group__title">Frontend</h3>
+            <ul class="pills">
+              <li class="pill">React</li>
+              <li class="pill">TypeScript</li>
+              <li class="pill">Next.js</li>
+              <li class="pill">Tailwind CSS</li>
+              <li class="pill">Vue</li>
+              <li class="pill">Framer Motion</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Backend</h3>
+            <ul class="pills">
+              <li class="pill">Node.js</li>
+              <li class="pill">Express</li>
+              <li class="pill">Python</li>
+              <li class="pill">Go</li>
+              <li class="pill">GraphQL</li>
+              <li class="pill">REST APIs</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Databases</h3>
+            <ul class="pills">
+              <li class="pill">PostgreSQL</li>
+              <li class="pill">Supabase</li>
+              <li class="pill">MongoDB</li>
+              <li class="pill">Redis</li>
+              <li class="pill">Prisma</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3 class="skill-group__title">Tools &amp; DevOps</h3>
+            <ul class="pills">
+              <li class="pill">Git</li>
+              <li class="pill">Docker</li>
+              <li class="pill">AWS</li>
+              <li class="pill">Vite</li>
+              <li class="pill">CI/CD</li>
+              <li class="pill">Vercel</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__index">03</span>
+          <h2 class="section__title">Projects</h2>
+        </div>
+
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__icon">&lt;/&gt;</span>
+              <div class="project-card__links">
+                <a href="#" class="icon-link" aria-label="Live preview" title="Live preview">Live</a>
+                <a href="#" class="icon-link" aria-label="GitHub repository" title="GitHub">Code</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">CubeTimer Pro</h3>
+            <p class="project-card__desc">
+              A speedcubing timer and analytics dashboard with scramble generation,
+              session stats, and personal-best tracking.
+            </p>
+            <ul class="tags">
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Supabase</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__icon">&#8721;</span>
+              <div class="project-card__links">
+                <a href="#" class="icon-link" aria-label="Live preview" title="Live preview">Live</a>
+                <a href="#" class="icon-link" aria-label="GitHub repository" title="GitHub">Code</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">MathViz Studio</h3>
+            <p class="project-card__desc">
+              Interactive visualizer for calculus and linear algebra concepts,
+              rendering functions, vectors, and transformations in real time.
+            </p>
+            <ul class="tags">
+              <li class="tag">Next.js</li>
+              <li class="tag">Canvas</li>
+              <li class="tag">WebGL</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__icon">&#9636;</span>
+              <div class="project-card__links">
+                <a href="#" class="icon-link" aria-label="Live preview" title="Live preview">Live</a>
+                <a href="#" class="icon-link" aria-label="GitHub repository" title="GitHub">Code</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">DevBoard</h3>
+            <p class="project-card__desc">
+              A collaborative kanban and issue tracker for small teams, featuring
+              real-time updates, role-based access, and keyboard-first navigation.
+            </p>
+            <ul class="tags">
+              <li class="tag">Node.js</li>
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">WebSockets</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__icon">&#960;</span>
+              <div class="project-card__links">
+                <a href="#" class="icon-link" aria-label="Live preview" title="Live preview">Live</a>
+                <a href="#" class="icon-link" aria-label="GitHub repository" title="GitHub">Code</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Algorithmia</h3>
+            <p class="project-card__desc">
+              An algorithm playground that animates sorting, pathfinding, and graph
+              traversal step by step for learners and interview prep.
+            </p>
+            <ul class="tags">
+              <li class="tag">Vue</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Vite</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Education timeline -->
+    <section class="section" id="timeline">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__index">04</span>
+          <h2 class="section__title">Experience &amp; Education</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__period">2023 — Present</p>
+            <h3 class="timeline__role">Senior Full-Stack Developer</h3>
+            <p class="timeline__org">Freelance &amp; Contract</p>
+            <p class="timeline__desc">
+              Designing and shipping end-to-end web applications for startups and
+              agencies, from architecture to deployment.
+            </p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__period">2021 — 2023</p>
+            <h3 class="timeline__role">Full-Stack Developer</h3>
+            <p class="timeline__org">TechForge Labs</p>
+            <p class="timeline__desc">
+              Built and maintained customer-facing products, improved performance,
+              and mentored junior engineers on clean architecture.
+            </p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__period">2019 — 2021</p>
+            <h3 class="timeline__role">Frontend Developer</h3>
+            <p class="timeline__org">Pixel &amp; Byte Studio</p>
+            <p class="timeline__desc">
+              Crafted responsive interfaces and design systems, collaborating closely
+              with designers to deliver polished experiences.
+            </p>
+          </li>
+
+          <li class="timeline__item">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <p class="timeline__period">2015 — 2019</p>
+            <h3 class="timeline__role">B.Sc. Computer Science</h3>
+            <p class="timeline__org">State University</p>
+            <p class="timeline__desc">
+              Focused on algorithms, mathematics, and software engineering. Graduated
+              with honors and a lasting love for problem solving.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--contact" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__index">05</span>
+          <h2 class="section__title">Get In Touch</h2>
+        </div>
+
+        <div class="contact">
+          <div class="contact__intro">
+            <h3 class="contact__headline">Let's build something great.</h3>
+            <p class="contact__text">
+              Have a project in mind, a role to fill, or just want to talk shop about
+              code, math, or cubes? Drop me a message and I'll get back to you soon.
+            </p>
+            <ul class="contact__links">
+              <li><a href="#" class="contact__link">GitHub</a></li>
+              <li><a href="#" class="contact__link">LinkedIn</a></li>
+              <li><a href="mailto:hello@example.com" class="contact__link">Email</a></li>
+              <li><a href="#" class="contact__link">Fiverr</a></li>
+            </ul>
+          </div>
+
+          <form class="contact__form" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name" class="field__label">Name</label>
+              <input class="field__input" type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email" class="field__label">Email</label>
+              <input class="field__input" type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="message" class="field__label">Message</label>
+              <textarea class="field__input field__input--area" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+            <p class="contact__form-note" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; <span id="year">2026</span> Alex Rivera. Built with care.</p>
+      <a href="#hero" class="footer__top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
