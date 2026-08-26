@@ -302,6 +302,9 @@
   });
 })();
 
+
+
+
 /* ============================================================
    4. Contact form feedback (no backend)
    ============================================================ */
@@ -327,11 +330,33 @@
     form.reset();
   });
 })();
-
-/* ============================================================
-   5. Footer year
-   ============================================================ */
 (function () {
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+
+  ////////////////
+ // contact us // 
+////////////////
+function sendMail(){
+  let params = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+  // var status = document.getElementById('form-status');
+  // TODO: test name, email and message before emailjs.send...
+
+  const serviceID = "service_w1inhzg";
+  const templateID = "template_5bfe8hj";
+  emailjs.send(serviceID, templateID, params).then(
+    res => {
+      document.getElementById('name').value = "";
+      document.getElementById('email').value = "";
+      document.getElementById('message').value = "";
+      console.log(res);
+      alert("your message sent successfully!");
+    }
+  ).catch(err => console.log(err))
+}

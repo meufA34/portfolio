@@ -12,6 +12,18 @@
   <meta property="og:image" content="https://bolt.new/static/og_default.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+
+    <!-- for EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Ql_xt-wdRpe1TkT0P",
+      });
+   })();
+</script>
+
+
 </head>
 <body>
   <!-- Falling physics background canvas -->
@@ -154,13 +166,15 @@
 
 
           <article class="skill-group">
-            <h3 class="skill-group__title">Tools</h3>
+            <h3 class="skill-group__title">Tools for my Journey</h3>
             <ul class="pills">
-              <li class="pill">VScode - code editor</li>
+              <li class="pill">VScode</li>
               <li class="pill">Git</li>
               <li class="pill">yEd</li>
               <li class="pill">Hostinger</li>
               <li class="pill">Antigravity</li>
+              <!-- <li class="pill">Google stitch</li> -->
+              <li class="pill">EmailJS</li>
             </ul>
           </article>
         </div>
@@ -284,7 +298,7 @@
               <label for="message" class="field__label">Message</label>
               <textarea class="field__input field__input--area" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+            <button type="submit" onclick="sendMail()" class="btn btn--primary btn--block">Send Message</button>
             <p class="contact__form-note" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
