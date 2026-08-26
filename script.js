@@ -305,58 +305,78 @@
 
 
 
-/* ============================================================
-   4. Contact form feedback (no backend)
-   ============================================================ */
-(function () {
-  var form = document.getElementById('contact-form');
-  var status = document.getElementById('form-status');
-  if (!form || !status) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.querySelector('#name').value.trim();
-    var email = form.querySelector('#email').value.trim();
-    var message = form.querySelector('#message').value.trim();
-
-    if (!name || !email || !message) {
-      status.textContent = 'Please fill in all fields before sending.';
-      status.style.color = 'var(--error)';
-      return;
-    }
-
-    status.textContent = 'Thanks, ' + name + '! Your message has been queued.';
-    status.style.color = 'var(--success)';
-    form.reset();
-  });
-})();
-(function () {
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-})();
-
-
   ////////////////
  // contact us // 
 ////////////////
-function sendMail(){
+document.getElementById('submit_button').addEventListener('click', (event) => {
+  event.preventDefault();
   let params = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    message: document.getElementById('message').value
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    message: document.getElementById('message').value.trim()
   };
-  // var status = document.getElementById('form-status');
-  // TODO: test name, email and message before emailjs.send...
-
-  const serviceID = "service_w1inhzg";
-  const templateID = "template_5bfe8hj";
-  emailjs.send(serviceID, templateID, params).then(
-    res => {
-      document.getElementById('name').value = "";
-      document.getElementById('email').value = "";
-      document.getElementById('message').value = "";
-      console.log(res);
-      alert("your message sent successfully!");
+  let nameOk = false;
+  let emailOk = false; 
+  var status_msg = document.getElementById('form-status');
+  if(params.name.length === 0 || params.email.length === 0 || params.message.length === 0){
+    status_msg.style.color = 'var(--error)';
+    status_msg.innerText = 'Please fill in all the fields before sending.';
+  }else{
+    
+    // checking name
+    const nameRegex = /^[a-zA-Z\s-]+$/;
+    if(params.name.length <= 2 || !nameRegex.test(params.name)){
+      status_msg.style.color = 'var(--error)';
+      status_msg.innerHTML = 'name: only a-z!';
+      nameOk = false;
+    }else{
+      nameOk = true;
     }
-  ).catch(err => console.log(err))
-}
+    
+    // checking email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(params.email)){
+      status_msg.style.color = 'var(--error)';
+      status_msg.innerText = 'wrong email';
+      emailOk = false;
+    }else{
+      emailOk = true;
+    }
+    if(emailOk && nameOk){
+      const serviceId = "service_w1inhzg";
+      const templateId = "template_5bfe8hj";
+      emailjs.send(serviceId, templateId, params).then(
+        res => {
+          document.getElementById('name').value = "";
+          document.getElementById('email').value = "";
+          document.getElementById('message').value = "";
+          console.log(res);
+          status_msg.style.color = 'var(--success)';
+          status_msg.innerText = 'the message sent successfully !';
+        }
+      ).catch(err => {
+        status_msg.style.color = 'var(--error)';
+        status_msg.innerText = 'something went wrong, try later';
+        console.log(err);
+      })
+      
+    }
+  }
+  
+  
+})
+
+console.log('script loaded');
+// in the last (else)
+
+// const serviceID = "service_w1inhzg";
+//     const templateID = "template_5bfe8hj";
+//     emailjs.send(serviceID, templateID, params).then(
+//       res => {
+//         document.getElementById('name').value = "";
+//         document.getElementById('email').value = "";
+//         document.getElementById('message').value = "";
+//         console.log(res);
+//         alert("your message sent successfully!");
+//       }
+//     ).catch(err => console.log(err))
