@@ -328,7 +328,7 @@ document.getElementById('submit_button').addEventListener('click', (event) => {
     const nameRegex = /^[a-zA-Z\s-]+$/;
     if(params.name.length <= 2 || !nameRegex.test(params.name)){
       status_msg.style.color = 'var(--error)';
-      status_msg.innerHTML = 'name: only a-z!';
+      status_msg.innerHTML = '2 letters or more, only letters!';
       nameOk = false;
     }else{
       nameOk = true;
