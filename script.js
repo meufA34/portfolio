@@ -310,6 +310,7 @@
 ////////////////
 document.getElementById('submit_button').addEventListener('click', (event) => {
   event.preventDefault();
+  
   let params = {
     name: document.getElementById('name').value.trim(),
     email: document.getElementById('email').value.trim(),
@@ -343,6 +344,7 @@ document.getElementById('submit_button').addEventListener('click', (event) => {
       emailOk = true;
     }
     if(emailOk && nameOk){
+      
       const serviceId = "service_w1inhzg";
       const templateId = "template_5bfe8hj";
       emailjs.send(serviceId, templateId, params).then(
@@ -359,7 +361,6 @@ document.getElementById('submit_button').addEventListener('click', (event) => {
         status_msg.innerText = 'something went wrong, try later';
         console.log(err);
       })
-      
     }
   }
   
@@ -367,16 +368,3 @@ document.getElementById('submit_button').addEventListener('click', (event) => {
 })
 
 console.log('script loaded');
-// in the last (else)
-
-// const serviceID = "service_w1inhzg";
-//     const templateID = "template_5bfe8hj";
-//     emailjs.send(serviceID, templateID, params).then(
-//       res => {
-//         document.getElementById('name').value = "";
-//         document.getElementById('email').value = "";
-//         document.getElementById('message').value = "";
-//         console.log(res);
-//         alert("your message sent successfully!");
-//       }
-//     ).catch(err => console.log(err))

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+  <!-- <meta property="og:image" content="https://bolt.new/static/og_default.png"> -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
 
@@ -32,8 +32,8 @@
   <!-- Navigation -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#hero" class="nav__logo">
-        <span class="nav__logo-mark">&lt;/&gt;</span>
+      <a target="_blank" href="https://github.com/meufA34" class="nav__logo">
+        <image href="https://github.com/meufA34" src="Avatar.jpg" style="width: 40px; border: 3px solid #fb923c; border-radius: 50%;" class="nav__logo-mark"></image>
         <span class="nav__logo-text">Mostafa abu shahwan</span>
       </a>
 
@@ -68,7 +68,7 @@
           Computer science student (high-school), learning Full-stack web development, 
           trying to learn something new everyday.
           I'm also a speedcuber (CFOP & ROUX) with sub-20s average,
-          now challenging myself by learning the blindfolded method (3BLD).
+          now challenging myself by learning the blindfolded method (3BLD) and the OH (one handed cubing).
         </p>
         <div class="hero__cta">
           <a href="#projects" class="btn btn--primary">View Projects</a>
@@ -82,16 +82,12 @@
           </div>
          
           <div class="hero__stat">
-            <dt>14.4s</dt>
+            <dt>15.53s</dt>
             <dd>the best solve - CFOP</dd>
-            <!-- TODO: get the best solve from snapchat memories -->
+
           </div>
         </dl>
       </div>
-      <!-- <div class="hero__scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <span class="hero__scroll-line"></span>
-      </div> -->
     </section>
 
     <!-- About -->
@@ -280,7 +276,6 @@
             </p>
             <ul class="contact__links">
               <li><a href="https://github.com/meufA34" target="_blank" class="contact__link">GitHub</a></li>
-              <li><a onclick="alert('mostafa26609@gmail.com')" class="contact__link">Email</a></li>
               <li><a href="https://www.instagram.com/mostafa_abush/" target="_blank" class="contact__link">Instagram</a></li>
             </ul>
           </div>
@@ -296,7 +291,7 @@
             </div>
             <div class="field">
               <label for="message" class="field__label">Message</label>
-              <textarea class="field__input field__input--area" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <textarea class="field__input field__input--area" id="message" name="message" rows="5" placeholder="Ask me anything..." required></textarea>
             </div>
             <button id="submit_button" class="btn btn--primary btn--block">Send Message</button>
             <p class="contact__form-note" id="form-status" role="status" aria-live="polite"></p>
